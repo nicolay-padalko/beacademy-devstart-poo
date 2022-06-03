@@ -3,5 +3,8 @@
     "psr-4": {
       "Classes\\": "src/"
     }
+  },
+  "require": {
+    "dompdf/dompdf": "^0.6.2"
   }
 }

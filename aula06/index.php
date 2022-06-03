@@ -8,9 +8,20 @@ use Classes\Config\Usuario;
 use Classes\Categoria;
 
 $us1 = new Usuario();
-
 $c1 = new Categoria();
 
+// reference the Dompdf namespace
+use Dompdf\Dompdf;
 
-var_dump($us1);
-var_dump($c1);
+// instantiate and use the dompdf class
+$dompdf = new Dompdf();
+$dompdf->loadHtml('hello world');
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
